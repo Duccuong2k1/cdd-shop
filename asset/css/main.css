@@ -1,0 +1,359 @@
+.text {
+    color: rgb(255, 232, 130);
+}
+
+#top-bar {
+    background: #d4d7da;
+    padding: 10px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    top: 55px;
+}
+
+:root {
+    --primary-color: #fff5f5;
+    --secondary-color: #212121;
+    --there-color: #fdf7e5;
+}
+
+.dark-theme {
+    --primary-color: #000000;
+    --secondary-color: #fff;
+    --there-color: #000;
+}
+
+
+/* .dropdown .dropdown-menu li {
+    border-bottom: 1px solid #ccc;
+} */
+
+
+/*========== header ======= */
+
+html,
+body {
+    background: var(--primary-color);
+}
+
+.logo {
+    animation: zoomin 1s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+.main-title {
+    animation: moveRight 1s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+.menu {
+    animation: moveRight 1s linear 1;
+    animation-delay: 2s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+.contact-me {
+    animation: zoomin 1s linear 1;
+    animation-delay: 3s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(0.5);
+        visibility: visible;
+    }
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100px);
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0px);
+        visibility: visible;
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(100px);
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0px);
+        visibility: visible;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-100px);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0px);
+        visibility: visible;
+    }
+}
+
+.act {
+    color: orangered !important;
+    background: linear-gradient(#fdf7e5 #f00) !important;
+}
+
+
+/*========== banner ========= */
+
+#banner {
+    background-image: url('../img/svg_banner.svg');
+    background-repeat: no-repeat;
+    /* background: rgb(252, 252, 252); */
+    position: relative;
+}
+
+.content-title {
+    position: absolute;
+    top: 200px;
+}
+
+.content-title h2 {
+    font-size: 70px;
+}
+
+#banner .carousel-inner img {
+    width: 450px !important;
+    height: auto;
+}
+
+
+/* .carousel-item img {
+    position: absolute;
+    right: 100px !important;
+} */
+
+.carousel-item.svg-one {
+    background-image: url('../img/svg_three.svg');
+    background-repeat: no-repeat;
+}
+
+.carousel-item.svg-two {
+    background-image: url('../img/svg_two.svg');
+    background-repeat: no-repeat;
+}
+
+.carousel-item.svg-three {
+    background-image: url('../img/svg-one.svg');
+    background-repeat: no-repeat;
+}
+
+.ads {
+    margin-top: 100px !important;
+}
+
+
+/* .banner-ads {
+    min-height: 200px !important;
+} */
+
+.banner-img {
+    height: auto;
+    /** Chiều cao tự động **/
+    margin: 5px auto;
+    /** Cách trên dưới 10px và nằm giữa **/
+    overflow: hidden;
+    /** DÒNG BẮT BUỘC CÓ **/
+    position: relative;
+}
+
+.banner-img img {
+    width: 100%;
+    /** Hình ảnh rộng 100% so với vùng chứa **/
+    transition: all 1s;
+    /** Tạo độ mượt **/
+}
+
+.banner-img:hover img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+
+/* ========= start shop ========= */
+
+.start-shop {
+    /* background: #fdf7e5; */
+    background: var(--there-color);
+    /* padding: 100px; */
+}
+
+.text-shop {
+    color: rgb(221, 165, 43);
+}
+
+.svg-blog {
+    background-image: url('../img/p1.svg');
+    background-repeat: no-repeat;
+    background-size: 400px;
+    position: relative;
+    left: 10%;
+}
+
+
+/*======== all product  ======*/
+
+.all-products {
+    background-image: url('../img/blob.svg');
+    background-repeat: no-repeat;
+    background-size: 700px;
+    /* position: absolute; */
+    /* right: 10%; */
+    /* background-image: url('../img/p2.svg'); */
+}
+
+.text-pink {
+    color: rgb(255, 155, 175);
+    font-size: 90px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list-product .card {
+    border: none;
+    position: relative;
+    /* min-height: 300px; */
+}
+
+.list-product .card .add-to-cart {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: none;
+}
+
+.list-product .card:hover .add-to-cart {
+    position: absolute;
+    bottom: 85px;
+    display: block;
+    background-color: #ffdada;
+    padding: 5px;
+    transition: all 1s !important;
+}
+
+.list-product .card:hover {
+    box-shadow: 12px 12px 5px rgb(255, 216, 216);
+    transition: all 0.8s;
+}
+
+.list-product .card:hover .card-body p span {
+    display: block !important;
+    color: rgb(231, 227, 0);
+}
+
+
+/* .list-product .card:hover .add-to-cart {
+    display: block !important;
+    transition: all 1s;
+} */
+
+.nav-tabs {
+    border-bottom: none !important;
+}
+
+
+/*==== shop====== */
+
+.ranting p i {
+    color: rgb(240, 240, 0);
+}
+
+
+/*========== cart ====== */
+
+.text-orange {
+    background-color: #ff5d00;
+}
+
+
+/* ===== summer sale ===== */
+
+.summer-sale {
+    background-color: #ebf7ff;
+    background-image: url(../img/p2.svg);
+    background-repeat: no-repeat;
+    background-position: left -200px;
+    margin-top: 5%;
+}
+
+.text-title {
+    font-size: 60px;
+}
+
+.text-decs {
+    font-size: 40px;
+}
+
+.move-sale {
+    position: relative;
+    max-width: 300px;
+    bottom: 150px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-filter-dark {
+    color: var(--secondary-color);
+}
+
+tr th {
+    color: var(--secondary-color);
+}
+
+.currency {
+    cursor: pointer;
+}
+
+
+/* =========== footer ================= */
+
+.discount {
+    /* background: var(--primary-color); */
+    /* color: var(--secondary-color); */
+    background: rgb(224, 224, 224);
+    padding: 50px;
+}
+
+.discount i {
+    font-size: 40px;
+    color: rgb(155, 155, 155);
+}
+
+.copy-right {
+    background: #f3f3f3;
+    padding: 10px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #ffdada;
+    /* display: none; */
+}

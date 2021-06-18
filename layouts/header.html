@@ -1,0 +1,137 @@
+<div id="top-bar" class="">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-4 ">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/" class="text-secondary"> <i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="" class="text-secondary"> <i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="" class="text-secondary"> <i class="fas fa-phone-alt "></i>0964-696-070</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-4 text-left text-md-center">
+                <p> doduccuong2001@gmail.com</p>
+            </div>
+            <div class="col-sm-6 col-md-4 d-none d-sm-flex justify-content-end">
+                <div class="">
+                    <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      english
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">VN</a></li>
+                        <li><a class="dropdown-item" href="#">UK</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      USD
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EUR</a></li>
+                        <li><a class="dropdown-item" href="#">GPB</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end top bar -->
+<div id="main-menu" class="" ng-controller="cart">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand font-weight-bold logo" href="#">
+                <img src="./asset/img/Capture.PNG" alt="" class="img-fluid" style="width:80px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold ac" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold ac" href="#!shop">shop</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-bold ac" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Product
+                </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item  border-bottom" href="#">Chair</a></li>
+                            <li><a class="dropdown-item border-bottom" href="#">Books</a></li>
+                            <li><a class="dropdown-item b-none" href="#">Clothes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold ac" href="#" tabindex="-1" aria-disabled="true">about</a>
+                    </li>
+                </ul>
+
+                <ul class="list-inline mx-5 contact-me">
+                    <li class="list-inline-item py-2"><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"><i class="far fa-user text-secondary"></i></a></li>
+                    <li class="list-inline-item"><a href="#!cart"><i class="fas fa-shopping-cart text-secondary"></i><span class="text-danger fw-bold">{{totalItem}}</span></a></li>
+                    <li class="list-inline-item"><a href=""><i class="far fa-moon text-secondary" id="icon-toggle"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- ====== form login======== -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="frmUser">
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label fw-bold">Email</label>
+                        <input type="email" name="email" class="form-control" id="" required ng-model="email">
+                        <div ng-hide="frmUser.email.$valid" style="color: red;">vui lòng nhap email</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="col-form-label fw-bold">Password</label>
+                        <input type="password" name="password" class="form-control" id="" required ng-model="password" data-bs-toggle="tooltip" data-bs-placement="bottom" title="mật khẩu tối thiểu 6 ký tự">
+                        <div ng-hide="frmUser.password.$valid" style="color: red;">vui lòng nhập mật khẩu</div>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me 30 days</label>
+                    </div>
+                    <button type="submit" class="btn btn-dark w-100"><i class="fas fa-arrow-circle-right mx-3"></i>LOG IN</button>
+                </form>
+                <p ng-show="frmUser.$valid" class="text-success">chúc mừng bạn đã đăng nhập thành công</p>
+
+            </div>
+            <div class=" text-center my-3">
+                <a href="https://www.facebook.com/" class="btn btn-outline-info"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://mail.google.com/" class="btn btn-outline-danger"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ====end form login =====-->
+<script>
+    var icon = document.getElementById('icon-toggle');
+    icon.onclick = function() {
+        document.body.classList.toggle('dark-theme');
+
+    }
+    $(document).ready(function() {
+
+        $('a.ac').click(function() {
+            // $(this).removeClass('act');
+            $(this).toggleClass('act');
+        })
+    });
+</script>

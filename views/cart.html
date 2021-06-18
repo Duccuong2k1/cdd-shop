@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row">
+        <p class="fw-italic my-5 text-filter-dark"><i class="fas fa-truck-moving text-success "></i>Nhấn vào mục giảm giá ở cuối để nhận freeship</p>
+        <p class="fw-bold text-filter-dark">All products in the shopping cart</p>
+        <div class="col-md-8 col-md-6 mb-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">stt</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">ac</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items">
+                    <tr ng-repeat="item in listCart">
+                        <th scope="row">
+                            <input class="form-check-input" type="checkbox" value="item.title" id="flexCheckDefault" ng-checked="all" ng-change="change(item,$index)" ng-model="nameitem">
+
+                        </th>
+                        <td class="">
+                            <div class="card mb-3 border-0">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{{item.img}}" alt="..." class="img-responsive img-fluid">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{item.title}}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-filter-dark">{{item.price | currency}}</td>
+                        <td>
+                            <input type="number" class="form-control" placeholder="1" min="0" ng-model="item.numOrder" ng-change="changesls(item,$index)">
+                        </td>
+                        <td class="text-filter-dark">{{item.numOrder * item.price | currency}}</td>
+                        <td>
+
+                            <a href="" ng-click="listCart.splice($index,1)" aria-label="Remove">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <!-- <button id="btn-add" class="btn btn-primary" ng-click="addProduct({})">Add item</button> -->
+            <a href="#!shop" class="btn btn-outline-info"><i class="fas fa-arrow-left mr-3"></i>continue buy shop</a>
+            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" class="btn btn-outline-success float-right"><i class="fas fa-money-check-alt mr-3   "></i>Buy Now</a>
+        </div>
+        <div class="col-md-4">
+            <div class="order m-2 border p-4 shadow rounded-lg">
+                <h4 class="text-filter-dark">Order Details</h4>
+                <p class="text-filter-dark">Shipping sale click link under here</p>
+                <p class="border-bottom my-5 text-filter-dark">Order subtotal: <span class="float-right fw-bold">{{totalPrice | currency}}</span> </p>
+                <p class="border-bottom my-5 text-filter-dark">Shipping: <span class="float-right fw-bold">{{ship | currency}}</span> </p>
+                <p class="border-bottom my-5 text-filter-dark">Total: <span class="float-right fw-bold">{{totalPrice + ship | currency}}</span> </p>
+                <button class="btn btn-success clearfix" id="liveToast">Buy Now</button>
+            </div>
+        </div>
+
+        <!-- show table when buy success  -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+            <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="..." class="rounded me-2" alt="...">
+                    <strong class="me-auto">Bootstrap</strong>
+                    <small>11 mins ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+        <!-- end -->
+
+        <div class="fw-bold text-center">
+            <h4 class="fw-bold text-filter-dark">All Voucher FreeShipping</h4>
+
+            <p class="fw-bold justify-content-between text-orange rounded p-3 w-25 text-light">ƯU ĐÃI ĐẶC BIỆT</p>
+
+        </div>
+        <div class="list-freeship my-4 row">
+            <div class="col-md-6 col-6 my-3 thumb" ng-repeat="code in freeCode">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{code.img}}" alt="..." class="img-responsive img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{code.title}}</h5>
+
+                                <p class="card-text"><small class="text-muted">{{code.content}}</small></p>
+                                <p class="card-text"><small class="text-muted">{{code.code}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end card -->
+        </div>
+    </div>
+</div>

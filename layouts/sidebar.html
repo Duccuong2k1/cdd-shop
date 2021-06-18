@@ -1,0 +1,23 @@
+<div class="form-login border border-danger rounded p-3">
+    <form action="" name="frmUser">
+        <div class="mb-3">
+            <label for="username" class="form-label fw-bold">Tên Đăng nhập</label>
+            <input type="text" class="form-control" id="username" placeholder="" name="username" ng-model="username" required ng-click="">
+            <div ng-hide="frmUser.username.$valid" style="color: red;">vui lòng nhập họ tên</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label fw-bold">password</label>
+            <input type="password" class="form-control" id="password" placeholder="" name="password" ng-model="password" required>
+            <div ng-hide="frmUser.password.$valid" style="color: red;">vui lòng nhập mật khẩu</div>
+        </div>
+        <button type="submit" class="btn btn-primary text-color">Submit</button>
+    </form>
+    <p ng-show="frmUser.$valid">chúc mừng bạn đã đăng nhập đúng</p>
+
+</div>
+<div class="category mt-4" ng-controller="category">
+    <ul class="list-group ">
+        <li class="list-group-item active" aria-current="true">Category</li>
+        <li class="list-group-item" ng-repeat="item in category "><a href="">{{item.title}}</a></li>
+    </ul>
+</div>

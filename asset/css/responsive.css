@@ -1,0 +1,12 @@
+@media Screen and (max-width:800px) {
+    body {
+        font-size: 13px;
+    }
+    #slide-carousel {
+        visibility: hidden;
+        clear: both;
+    }
+    .text-filter-dark {
+        font-size: 15px;
+    }
+}
